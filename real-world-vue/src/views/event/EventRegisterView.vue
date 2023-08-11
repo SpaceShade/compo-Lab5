@@ -28,6 +28,10 @@ function register(){
 }
 </script>
 <template>
-    <p>Registration the event here</p>
-    <button @click="register">Register Me</button>
+    <div class="bg-white rounded-lg shadow-md p-6">
+        <p class="text-xl font-semibold mb-4">Registration the event here</p>
+        <button @click="register" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition">
+            Register Me
+        </button>
+    </div>
 </template>

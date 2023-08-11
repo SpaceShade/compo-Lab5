@@ -1,25 +1,23 @@
 <template>
-    <RouterLink class="event-like" :to = "{name: 'event-detail', params:{id: event?.id}}">
-    <div class="event-class">
-        <div class="event-card">
-            <span>@{{ event?.time }} on {{ event?.date }}</span>
-            <h4>{{ event?.title }}</h4>
-        </div>
-    </div>
-</RouterLink>
-</template>
-
-<script setup lang="ts">
-import type { EventItem } from '@/type'
-import type { PropType } from 'vue';
-const props = defineProps({
-    event:{
-        type: Object as PropType<EventItem>,
-            require:true
+    <RouterLink class="event-link" :to="{ name: 'event-detail', params: { id: event?.id } }">
+      <div class="event-card">
+        <span class="text-gray-600">@{{ event?.time }} on {{ event?.date }}</span>
+        <h4 class="text-xl font-semibold mt-2">{{ event?.title }}</h4>
+      </div>
+    </RouterLink>
+  </template>
+  
+  <script setup lang="ts">
+  import type { EventItem } from '@/type'
+  import type { PropType } from 'vue';
+  const props = defineProps({
+    event: {
+      type: Object as PropType<EventItem>,
+      required: true
     }
-})
-
-</script>
+  })
+  
+  </script>
 
 <style scoped>
 .event-card {

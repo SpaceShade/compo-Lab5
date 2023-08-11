@@ -8,28 +8,35 @@ const store = useMessageStore()
 const { message } = storeToRefs(store)
 </script>
 <template>
-  <div><img alt="Vue logo" class="mt-5 m-auto mb-10 object-center h-28 w-72" src="@/assets/logo.svg" width="125" height="125" /></div>
+  <div class="flex flex-col items-center justify-center h-screen">
+    <div><img alt="Vue logo" class="mt-5 mb-10 object-center h-28 w-72" src="@/assets/logo.svg" width="125" height="125" /></div>
 
-  <header class="max-h-screen leading-normal">
-    <div id="flashMessage" v-if="message">
-      <h4>{{ message }}</h4>
-    </div>
-
-    <div class="wrapper">
-
-      <nav class="sm:flex justify-center items-center">
-        <div class="space-x-5">
-        <RouterLink class="hover:bg-orange-500 hover:text-white" :to="{ name: 'EventList' }">Home</RouterLink> |
-        <RouterLink class="hover:bg-orange-500 hover:text-white" :to="{ name: 'about' }">About</RouterLink>|
-        <RouterLink class="hover:bg-orange-500 hover:text-white" :to="{ name: 'StudentList' }">Student</RouterLink>
+    <header class="max-h-screen leading-normal">
+      <div id="flashMessage" v-if="message">
+        <h4>{{ message }}</h4>
       </div>
-      </nav>
-    </div>
 
-  </header>
+      <div class="wrapper">
+        <nav class="sm:flex justify-center items-center">
+          <div class="flex space-x-5 text-center"> <!-- Use 'flex' and 'space-x-5' classes here -->
+            <!-- Navigation links in the same line -->
+            <RouterLink class="hover:bg-orange-500 hover:text-white" :to="{ name: 'EventList' }">Home</RouterLink>|
+            <RouterLink class="hover:bg-orange-500 hover:text-white" :to="{ name: 'about' }">About</RouterLink>|
+            <RouterLink class="hover:bg-orange-500 hover:text-white" :to="{ name: 'StudentList' }">Student</RouterLink>
+          </div>
+        </nav>
+      </div>
+    </header>
 
-  <RouterView />
+    <RouterView />
+  </div>
 </template>
+
+<!-- ... -->
+
+
+<!-- ... -->
+
 
 <style scoped>
 #app {
@@ -61,11 +68,6 @@ header {
 .logo {
   display: block;
   margin: 0 auto 2rem;
-}
-
-header {
-  line-height: 1.5;
-  max-height: 100vh;
 }
 
 .logo {
